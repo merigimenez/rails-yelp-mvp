@@ -1,0 +1,22 @@
+<div class='m-4'>
+  <h1>New Restaurant</h1>
+  <div class="row g-3">
+    <%= simple_form_for [@restaurant] do |f| %>
+      <div class="col-6">
+        <%= f.input :name, class:"form-control-plaintext" %>
+      </div>
+      <div class="col-6">
+        <%= f.input :category, :collection => CATEGORY, class:"form-select" %>
+      </div>
+      <div class="col-6">
+        <%= f.input :address, class: "form-control-plaintext"%>
+      </div>
+      <div class="col-6">
+        <%= f.input :phone_number, class:"form-control-plaintext" %>
+      </div>
+        <div class="col-6">
+        <%= f.submit "Save", class:"btn btn-outline-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>

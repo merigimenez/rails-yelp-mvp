@@ -1,0 +1,35 @@
+<div class='m-4'>
+  <h1 class='mb-4'><%= @restaurant.name %></h1>
+
+  <table class="table">
+    <tbody>
+      <tr>
+        <th scope="row">Category: </th>
+        <td><%= @restaurant.category %></td>
+      </tr>
+      <tr>
+        <th scope="row">Address: </th>
+        <td><%= @restaurant.address %></td>
+      </tr>
+      <tr>
+        <th scope="row">Phone number: </th>
+        <td><%= @restaurant.phone_number %></td>
+      </tr>
+  </table>
+
+  <%= link_to "Back to all restaurants", restaurants_path, class:"btn btn-outline-success" %>
+  <%= link_to "Leave a Review", new_restaurant_review_path(@restaurant), class:"btn btn-outline-success" %>
+
+  <div class='mb-4'>
+    <h2 class='m-4 border-bottom'>Reviews</h2>
+    <% @restaurant.reviews.each do |review| %>
+      <div class="border rounded p-3 mt-3">
+        <p><strong>Rating:</strong> <%= review.rating %></p>
+        <p><%= review.content %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<%# <i class="fa-solid fa-star"></i> %>
